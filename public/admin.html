@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<th>Action</th>
+<tr>
+  <th>ID</th>
+  <th>Vehicle</th>
+  <th>User</th>
+  <th>Phone</th>
+  <th>ID Proof</th>
+  <th>License</th>
+  <th>Date</th>
+  <th>Action</th>
+</tr>
+<h1>📊 Admin Dashboard</h1>
+
+<button onclick="loadBookings()">Refresh</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Vehicle</th>
+      <th>User</th>
+      <th>Phone</th>
+      <th>ID Proof</th>
+      <th>License</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody id="bookingTable"></tbody>
+</table>
+
+<script src="admin.js"></script>
+</body>
+</html>

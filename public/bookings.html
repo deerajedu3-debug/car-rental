@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bookings</title>
+
+  <style>
+    body{
+      font-family: Arial;
+      background:#f2f2f2;
+      padding:20px;
+    }
+
+    .card{
+      background:white;
+      padding:15px;
+      margin:15px;
+      border-radius:10px;
+      box-shadow:0 0 10px rgba(0,0,0,0.1);
+    }
+
+    button{
+      background:red;
+      color:white;
+      border:none;
+      padding:10px;
+      border-radius:5px;
+      cursor:pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>All Bookings 📋</h1>
+
+<div id="bookings"></div>
+
+<script>
+
+async function loadBookings(){
+
+  const res = await fetch("/bookings");
+  const data = await res.json();
+
+  let output = "";
+
+  data.forEach(b => {
+
+    output += `
+      <div class="card">
+
+        <h2>${b.vehicleName}</h2>
+
+        <p><b>User:</b> ${b.user}</p>
+
+        <p><b>Phone:</b> ${b.phone}</p>
+
+        <p><b>ID:</b> ${b.idProof}</p>
+
+        <p><b>License:</b> ${b.license}</p>
+
+        <p><b>Date:</b> ${b.date}</p>
+
+        <button onclick="deleteBooking(${b.id})">
+          Delete
+        </button>
+
+      </div>
+    `;
+  });
+
+  document.getElementById("bookings").innerHTML = output;
+}
+
+async function deleteBooking(id){
+
+  await fetch(`/delete/${id}`,{
+    method:"DELETE"
+  });
+
+  alert("Booking Deleted ✅");
+
+  loadBookings();
+}
+
+loadBookings();
+
+</script>
+
+</body>
+</html>

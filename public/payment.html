@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>UPI Payment</title>
+  <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- TOP BAR -->
+  <div class="header">
+    <h2>Pay via UPI</h2>
+  </div>
+
+  <!-- AMOUNT -->
+  <div class="amount-box">
+    <h1 id="amount"></h1>
+    <p>To Vehicle Rental</p>
+  </div>
+
+  <!-- UPI INPUT -->
+  <div class="upi-box">
+    <input type="text" id="upiId" placeholder="Enter UPI ID (example@upi)">
+  </div>
+
+  <!-- QR SECTION (FAKE UI) -->
+  <div class="qr-box">
+    <p>Scan & Pay</p>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=demo@upi">
+  </div>
+
+  <!-- PAY BUTTON -->
+  <button class="pay-btn" onclick="payNow()">Pay Now</button>
+
+</div>
+
+<script src="payment.js"></script>
+</body>
+</html>

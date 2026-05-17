@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vehicle Rental</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Vehicle Rental 🚗🏍️</h1>
+
+<button onclick="logout()">Logout</button>
+
+<button onclick="setType('car')">Cars</button>
+<button onclick="setType('bike')">Bikes</button>
+
+<div id="vehicles"></div>
+
+<!-- OVERLAY -->
+<div id="overlay" onclick="closeForm()"></div>
+
+<!-- BOOKING FORM -->
+<div id="bookingForm">
+  <span onclick="closeForm()">❌</span>
+
+  <h3>Complete Booking</h3>
+
+  <input type="text" id="userName" placeholder="Name">
+  <input type="text" id="phone" placeholder="Phone">
+  <input type="text" id="idProof" placeholder="PAN/Aadhar">
+  <input type="text" id="license" placeholder="License">
+
+  <input type="date" id="startDate">
+  <input type="date" id="endDate">
+
+  <p id="totalPrice"></p>
+
+  <button onclick="submitBooking()">Submit</button>
+</div>
+
+<!-- ✅ BILL POPUP (MOVED OUTSIDE) -->
+<div id="billPopup">
+  <h3>Bill Summary</h3>
+
+  <p id="billDays"></p>
+  <p id="billPrice"></p>
+  <p id="billTotal"></p>
+
+  <button onclick="confirmBooking()">Confirm</button>
+  <button onclick="closeBill()">Cancel</button>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

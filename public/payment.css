@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #f1f3f6;
+}
+
+/* APP CONTAINER */
+.app {
+  max-width: 400px;
+  margin: auto;
+  background: white;
+  height: 100vh;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* HEADER */
+.header {
+  background: #5f259f; /* PhonePe style */
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+/* AMOUNT */
+.amount-box {
+  text-align: center;
+  padding: 20px;
+}
+
+.amount-box h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+/* UPI INPUT */
+.upi-box {
+  padding: 20px;
+}
+
+.upi-box input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* QR */
+.qr-box {
+  text-align: center;
+  padding: 20px;
+}
+
+.qr-box img {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+/* BUTTON */
+.pay-btn {
+  width: 90%;
+  margin: 20px;
+  padding: 15px;
+  background: #5f259f;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+}
