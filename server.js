@@ -89,20 +89,7 @@ app.delete("/delete/:id", (req, res) => {
 
   res.json({ message: "Booking deleted ✅" });
 });
-
 // 🚀 START SERVER
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
-});
-const express = require("express");
-const path = require("path");
-
-const app = express();
-
-const PORT = process.env.PORT || 3000;
-
-app.use(express.static(path.join(__dirname, "public")));
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
 });
