@@ -15,15 +15,15 @@
     "phone": "9988776655",
     "idProof": "KLMNO4321P",
     "license": "DL0420211234567",
-    "date": "14/5/2026, 9:04:48 pm"
+    "date": "14/5/2026, 9:25:31 pm"
   },
   {
     "id": 3,
     "vehicleName": "i20",
-    "user": "dhanu",
+    "user": "Arjun Kumar",
     "phone": "9988776655",
-    "idProof": "KLMNO4321P",
-    "license": "DL0420211234567",
-    "date": "14/5/2026, 9:25:31 pm"
+    "aadhaar": "123456789012",
+    "panCard": "ABCDE1234F",
+    "date": "19/5/2026, 10:05:27 pm"
   }
 ]

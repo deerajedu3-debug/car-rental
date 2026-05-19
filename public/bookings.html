@@ -40,6 +40,7 @@
 async function loadBookings(){
 
   const res = await fetch("/bookings");
+
   const data = await res.json();
 
   let output = "";
@@ -55,9 +56,9 @@ async function loadBookings(){
 
         <p><b>Phone:</b> ${b.phone}</p>
 
-        <p><b>ID:</b> ${b.idProof}</p>
+        <p><b>Aadhaar:</b> ${b.aadhaar}</p>
 
-        <p><b>License:</b> ${b.license}</p>
+        <p><b>PAN Card:</b> ${b.panCard}</p>
 
         <p><b>Date:</b> ${b.date}</p>
 
