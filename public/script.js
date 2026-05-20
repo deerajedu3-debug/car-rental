@@ -147,6 +147,9 @@ function submitBooking() {
   const panCard =
     document.getElementById("panCard").value.trim();
 
+  const license =
+    document.getElementById("license").value.trim();
+
   const startDate =
     document.getElementById("startDate").value;
 
@@ -159,6 +162,7 @@ function submitBooking() {
     !phone ||
     !aadhaar ||
     !panCard ||
+    !license ||
     !startDate ||
     !endDate
   ) {
@@ -191,13 +195,24 @@ function submitBooking() {
   }
 
   // 🆔 PAN VALIDATION
-  // Example: ABCDE1234F
   const panRegex =
     /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
 
   if (!panRegex.test(panCard.toUpperCase())) {
 
     alert("Invalid PAN Card Number");
+
+    return;
+  }
+
+  // 🚘 DRIVING LICENSE VALIDATION
+  const licenseRegex = /^[0-9]{10}$/;
+
+  if (!licenseRegex.test(license)) {
+
+    alert(
+      "Driving License Number must be exactly 10 digits"
+    );
 
     return;
   }
@@ -241,7 +256,8 @@ function submitBooking() {
     name,
     phone,
     aadhaar,
-    panCard
+    panCard,
+    license
   };
 }
 
