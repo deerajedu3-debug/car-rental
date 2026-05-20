@@ -132,6 +132,20 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+// 🚘 DRIVING LICENSE VALIDATION
+function validateLicense(license) {
+
+  // Example:
+  // KA0120231234567
+
+  const regex =
+    /^[A-Z]{2}[0-9]{2}[0-9]{4}[0-9]{7}$/;
+
+  return regex.test(
+    license.toUpperCase()
+  );
+}
+
 // 📊 SHOW BILL BEFORE BOOKING
 function submitBooking() {
 
@@ -166,12 +180,15 @@ function submitBooking() {
     !startDate ||
     !endDate
   ) {
+
     alert("All fields required!");
+
     return;
   }
 
   // 📱 PHONE VALIDATION
-  const phoneRegex = /^[0-9]{10}$/;
+  const phoneRegex =
+    /^[0-9]{10}$/;
 
   if (!phoneRegex.test(phone)) {
 
@@ -183,7 +200,8 @@ function submitBooking() {
   }
 
   // 🪪 AADHAAR VALIDATION
-  const aadhaarRegex = /^[0-9]{12}$/;
+  const aadhaarRegex =
+    /^[0-9]{12}$/;
 
   if (!aadhaarRegex.test(aadhaar)) {
 
@@ -194,30 +212,40 @@ function submitBooking() {
     return;
   }
 
-  // 🆔 PAN VALIDATION
+  // 🆔 PAN CARD VALIDATION
+  // Example: ABCDE1234F
   const panRegex =
     /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
 
-  if (!panRegex.test(panCard.toUpperCase())) {
+  if (!panRegex.test(
+    panCard.toUpperCase()
+  )) {
 
-    alert("Invalid PAN Card Number");
+    alert(
+      "Invalid PAN Card Number"
+    );
 
     return;
   }
 
-  function validateLicense(license) {
-    // Allows alphabets + numbers only
-    const regex = /^[A-Za-z0-9]+$/;
+  // 🚘 DRIVING LICENSE VALIDATION
+  if (!validateLicense(license)) {
 
-    return regex.test(license);
-}
+    alert(
+      "Invalid Driving License Number"
+    );
+
+    return;
+  }
 
   // 📅 DATE VALIDATION
   const start = new Date(startDate);
+
   const end = new Date(endDate);
 
   const days =
-    (end - start) / (1000 * 60 * 60 * 24);
+    (end - start) /
+    (1000 * 60 * 60 * 24);
 
   if (days <= 0) {
 
@@ -227,22 +255,34 @@ function submitBooking() {
   }
 
   // 💰 TOTAL PRICE
-  const total = days * selectedPrice;
+  const total =
+    days * selectedPrice;
 
   // 💾 SAVE TOTAL
-  localStorage.setItem("totalAmount", total);
+  localStorage.setItem(
+    "totalAmount",
+    total
+  );
 
   // 📊 BILL DISPLAY
-  document.getElementById("billDays").innerText =
+  document.getElementById(
+    "billDays"
+  ).innerText =
     "Days: " + days;
 
-  document.getElementById("billPrice").innerText =
+  document.getElementById(
+    "billPrice"
+  ).innerText =
     "Price/day: ₹" + selectedPrice;
 
-  document.getElementById("billTotal").innerText =
+  document.getElementById(
+    "billTotal"
+  ).innerText =
     "Total: ₹" + total;
 
-  document.getElementById("billPopup").style.display =
+  document.getElementById(
+    "billPopup"
+  ).style.display =
     "block";
 
   // 💾 TEMP STORE USER DATA
@@ -264,12 +304,14 @@ function confirmBooking() {
     method: "POST",
 
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type":
+        "application/json"
     },
 
     body: JSON.stringify({
 
-      vehicleId: selectedVehicle,
+      vehicleId:
+        selectedVehicle,
 
       ...window.bookingData
     })
@@ -297,7 +339,9 @@ function confirmBooking() {
 // ❌ CLOSE BILL
 function closeBill() {
 
-  document.getElementById("billPopup").style.display =
+  document.getElementById(
+    "billPopup"
+  ).style.display =
     "none";
 }
 
@@ -306,7 +350,8 @@ function logout() {
 
   localStorage.removeItem("user");
 
-  window.location.href = "index.html";
+  window.location.href =
+    "index.html";
 }
 
 // 🚀 LOAD VEHICLES
