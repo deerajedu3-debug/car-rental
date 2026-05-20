@@ -205,17 +205,12 @@ function submitBooking() {
     return;
   }
 
-  // 🚘 DRIVING LICENSE VALIDATION
-  const licenseRegex = /^[0-9]{10}$/;
+  function validateLicense(license) {
+    // Allows alphabets + numbers only
+    const regex = /^[A-Za-z0-9]+$/;
 
-  if (!licenseRegex.test(license)) {
-
-    alert(
-      "Driving License Number must be exactly 10 digits"
-    );
-
-    return;
-  }
+    return regex.test(license);
+}
 
   // 📅 DATE VALIDATION
   const start = new Date(startDate);
